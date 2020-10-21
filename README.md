@@ -44,7 +44,17 @@ IiifS3 assumes that you have an Amazon S3 account configured for use.  By defaul
   From an instance profile when running on EC2.
   The SDK also searches the following locations for a region:
   ENV['AWS_REGION']
+  
 
+`Important! Its available to run script offline, without S3 uploading.`
+
+### How to run IIIF converter
+
+```shell
+ruby test.rb
+```
+
+Also see whole config.rb before it
 
 ## Contributing
 

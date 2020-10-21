@@ -24,6 +24,8 @@ mkmf.log
 .env
 
 build/*
+build-*
 data/*
 
 !/*/.gitkeep
+.idea/*

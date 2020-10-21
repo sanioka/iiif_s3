@@ -1,21 +1,21 @@
 require 'csv'
 require 'json'
 
-require "iiif_s3/version"
-require "iiif_s3/errors"
-require "iiif_s3/base_properties"
-require "iiif_s3/image_record"
-require "iiif_s3/builder"
-require "iiif_s3/manifest"
-require "iiif_s3/config"
-require "iiif_s3/collection"
-require "iiif_s3/image_variant"
-require "iiif_s3/thumbnail"
-require "iiif_s3/image_tile"
-require "iiif_s3/full_image"
-require "iiif_s3/image_info"
-require "iiif_s3/amazon_s3"
-require "iiif_s3/utilities"
+require_relative "iiif_s3/version"
+require_relative "iiif_s3/errors"
+require_relative "iiif_s3/base_properties"
+require_relative "iiif_s3/image_record"
+require_relative "iiif_s3/builder"
+require_relative "iiif_s3/manifest"
+require_relative "iiif_s3/config"
+require_relative "iiif_s3/collection"
+require_relative "iiif_s3/image_variant"
+require_relative "iiif_s3/thumbnail"
+require_relative "iiif_s3/image_tile"
+require_relative "iiif_s3/full_image"
+require_relative "iiif_s3/image_info"
+require_relative "iiif_s3/amazon_s3"
+require_relative "iiif_s3/utilities"
 
 # Module IiifS3 is a tool for generating IIIF resources from a set of files.  
 # It's designed to support the IIIF level 0 profile, and generates entirely static files. 

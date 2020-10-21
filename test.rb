@@ -6,12 +6,19 @@ require_relative 'lib/iiif_s3'
 
 # Set up configuration variables
 opts = {}
-opts[:image_directory_name] = "img"
-opts[:output_dir] = "/Users/david/Documents/opensource/mirador"
+# opts[:image_directory_name] = "img"
+# opts[:output_dir] = "/Users/sanioka/IvisSites/iiif_s3/_output"
 opts[:variants] = { "reference" => 600, "access" => 1200}
-opts[:upload_to_s3] = true
+opts[:upload_to_s3] = false
 opts[:image_types] = [".jpg", ".tif", ".jpeg", ".tiff"]
 opts[:document_file_types] = [".pdf"]
+
+# EastView custom param
+opts[:tile_width] = 256
+opts[:thumbnail_size] = 400
+opts[:tile_scale_factors] = [1,2,4,8]
+opts[:base_url] = 'http://127.0.0.1:8887'
+opts[:verbose] = true
 
 # Setup Temporary stores
 @data = []
@@ -63,7 +70,7 @@ iiif = IiifS3::Builder.new(opts)
 iiif.create_build_directories
 
 Dir.foreach(@dir) do |file|
-  if opts[:image_file_types].include? File.extname(file)
+  if opts[:image_types].include? File.extname(file)
     add_image("#{@dir}/#{file}")
   elsif opts[:document_file_types].include? File.extname(file)
     path = "#{@dir}/#{file}"
@@ -77,4 +84,4 @@ end
 
 iiif.load(@data)
 iiif.process_data
-cleanup
+#cleanup
